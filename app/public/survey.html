@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
 
 </head>
 
@@ -176,13 +177,7 @@
                 </div>
                 <div class="modal-body">
                     <h4>Your new friend's name is: <span id="bestName"></span></h4>
-                    <style>
-                        #bestImg{
-                        display:block;
-                        margin:auto;
-                        width: 90%
-                    }
-                    </style>
+
                     <img id="bestImg">
                 </div>
                 <div class="modal-footer">
@@ -195,8 +190,8 @@
 
     <footer class="footer">
         <div class="container">
-            <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub
-                    Repo</a></p>
+            <p><a href="/">Home Page</a> | <a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/ChanRahar/FriendFinder"
+                    target="_blank">GitHub Repo</a></p>
         </div>
     </footer>
 
@@ -204,11 +199,9 @@
 
         $("#submit").on("click", function (event) {
 
-            //prevent it from erasing data before it is captured
             event.preventDefault();
             alert("Thank you for submitting to the FriendFinder Survey");
-            // Here we grab the form elements
-            //the question values are returning undefined
+
             var newFriend = {
                 newName: $("#name").val().trim(),
                 newImg: $("#photo").val().trim(),
@@ -245,7 +238,6 @@
                         alert("Sorry we are having problems, please try again");
                     }
 
-                    // Clear the form when submitting
                     $("#name").val("");
                     $("#photo").val("");
                     $("#question1").val("");
